@@ -1,4 +1,4 @@
-.colorWrapper {
+.optionWrapper {
     text-align:center;
     min-width: 64px;
     margin-right: 4px;
@@ -8,6 +8,6 @@
     border: 2px solid #fff;
     cursor: default;
 }
-.colorWrapper.selected {
+.optionWrapper.selected {
     border: 2px solid #0773da6e;
 }

@@ -1,15 +1,15 @@
 import React from 'react';
-import './Options.css';
-import Color from './Color';
+import './OptionsPane.css';
+import Option from './Option';
 
-function Options(props) {
+function OptionsPane(props) {
 
   let enginePowers = [];
   for (let power in props.data.enginePowers) {
     let code = props.data.enginePowers[power];
     let obj = {code: code, name: power};
     let selected = code === props.selection.enginePower;
-    enginePowers.push(<Color data={obj} onClick={() => props.onClick("enginePower", code)} selected={selected} />); 
+    enginePowers.push(<Option data={obj} onClick={() => props.onClick("enginePower", code)} selected={selected} />); 
   }
 
   let engineFuels = [];
@@ -17,21 +17,21 @@ function Options(props) {
     let code = props.data.engineFuels[fuel];
     let obj = {code: code, name: fuel.toUpperCase()};
     let selected = code === props.selection.engineFuel;
-    engineFuels.push(<Color data={obj} onClick={() => props.onClick("engineFuel", code)} selected={selected} />);
+    engineFuels.push(<Option data={obj} onClick={() => props.onClick("engineFuel", code)} selected={selected} />);
   }
 
   let engineTractions = [];
   for (let traction in props.data.engineTractions) {
     let tractionObj = props.data.engineTractions[traction];
     let selected = tractionObj.code === props.selection.engineTraction;
-    engineTractions.push(<Color data={tractionObj} onClick={() => props.onClick("engineTraction", tractionObj.code)} selected={selected} />);
+    engineTractions.push(<Option data={tractionObj} onClick={() => props.onClick("engineTraction", tractionObj.code)} selected={selected} />);
   }
 
   let colors = [];
   for (let c in props.data.colors) {
     const color = props.data.colors[c];
     const selected = color === props.selection.color;
-    colors.push(<Color data={color} onClick={() => props.onClick("color", color)} selected={selected} />);
+    colors.push(<Option data={color} onClick={() => props.onClick("color", color)} selected={selected} />);
   }
 
   let roues = [];
@@ -41,7 +41,7 @@ function Options(props) {
     let rouesForCategory = [];
     for (let roue of props.data.roues[inches]) {
       const selected = roue.code === props.selection.roues;
-      rouesForCategory.push(<Color data={roue} onClick={() => props.onClick("roues", roue.code)} selected={selected}  />);
+      rouesForCategory.push(<Option data={roue} onClick={() => props.onClick("roues", roue.code)} selected={selected}  />);
     }
 
     roues.push(<div className="content roues alignLeft">{rouesForCategory}</div>);
@@ -52,7 +52,7 @@ function Options(props) {
     const code = props.data.retroviseurs[retro].code;
     const selected = code === props.selection.retroviseurs;
 
-    retroviseurs.push(<Color data={props.data.retroviseurs[retro]} onClick={() => props.onClick("retroviseurs", code)} selected={selected} />);
+    retroviseurs.push(<Option data={props.data.retroviseurs[retro]} onClick={() => props.onClick("retroviseurs", code)} selected={selected} />);
   }
 
   let vitres = [];
@@ -60,7 +60,7 @@ function Options(props) {
     const code = props.data.vitres[vitre].code;
     const selected = code === props.selection.vitres;
 
-    vitres.push(<Color data={props.data.vitres[vitre]} onClick={() => props.onClick("vitres", code)} selected={selected} />);
+    vitres.push(<Option data={props.data.vitres[vitre]} onClick={() => props.onClick("vitres", code)} selected={selected} />);
   }
 
   let toits = [];
@@ -68,7 +68,7 @@ function Options(props) {
     const code = props.data.toit[toit].code;
     const selected = code === props.selection.toit;
 
-    toits.push(<Color data={props.data.toit[toit]} onClick={() => props.onClick("toit", code)} selected={selected} />);
+    toits.push(<Option data={props.data.toit[toit]} onClick={() => props.onClick("toit", code)} selected={selected} />);
   }
 
   let packStyles = [];
@@ -76,7 +76,7 @@ function Options(props) {
     const code = props.data.packStyle[pack].code;
     const selected = code === props.selection.packStyle;
 
-    packStyles.push(<Color data={props.data.packStyle[pack]} onClick={() => props.onClick("packStyle", code)} selected={selected} />);
+    packStyles.push(<Option data={props.data.packStyle[pack]} onClick={() => props.onClick("packStyle", code)} selected={selected} />);
   }
 
   let phares = [];
@@ -84,7 +84,7 @@ function Options(props) {
     const code = props.data.phares[p].code;
     const selected = code === props.selection.phares;
 
-    phares.push(<Color data={props.data.phares[p]} onClick={() => props.onClick("phares", code)} selected={selected} />);
+    phares.push(<Option data={props.data.phares[p]} onClick={() => props.onClick("phares", code)} selected={selected} />);
   }
 
   let laveProjecteur = [];
@@ -92,7 +92,7 @@ function Options(props) {
     const code = props.data.laveProjecteur[p].code;
     const selected = code === props.selection.laveProjecteur;
 
-    laveProjecteur.push(<Color data={props.data.laveProjecteur[p]} onClick={() => props.onClick("laveProjecteur", code)} selected={selected} />);
+    laveProjecteur.push(<Option data={props.data.laveProjecteur[p]} onClick={() => props.onClick("laveProjecteur", code)} selected={selected} />);
   }
 
   let parchocs = [];
@@ -100,7 +100,7 @@ function Options(props) {
     const code = props.data.parchocs[p].code;
     const selected = code === props.selection.parchoc;
 
-    parchocs.push(<Color data={props.data.parchocs[p]} onClick={() => props.onClick("parchoc", code)} selected={selected} />);
+    parchocs.push(<Option data={props.data.parchocs[p]} onClick={() => props.onClick("parchoc", code)} selected={selected} />);
   }
 
   let options = [];
@@ -143,4 +143,4 @@ function Options(props) {
   );
 }
 
-export default Options;
+export default OptionsPane;

@@ -1,8 +1,8 @@
 import React from 'react';
-import './Color.css';
+import './Option.css';
 
-function Color(props) {
-    let classNames = ["colorWrapper"];
+function Option(props) {
+    let classNames = ["optionWrapper"];
     if (props.selected) {
         classNames.push("selected");
     }
@@ -11,7 +11,7 @@ function Color(props) {
     if (props.data.img) {
         illustration.push(<img
             key={Math.round(Math.random() * 10)}
-            className="color"
+            className="option"
             alt={props.data.name}
             width="64px"
             src={props.data.img}
@@ -26,4 +26,4 @@ function Color(props) {
     );
 }
   
-export default Color;
+export default Option;

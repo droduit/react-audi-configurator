@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Options from './Options';
+import OptionsPane from './OptionsPane';
 
 const options = {
 
@@ -213,7 +213,7 @@ class App extends React.Component {
           </div>
         </header>
         <div className="app">
-          <Options data={options} onClick={(type, code) => this.handleClick(type, code)} selection={this.state.selected} />
+          <OptionsPane data={options} onClick={(type, code) => this.handleClick(type, code)} selection={this.state.selected} />
           <div className="showroom">
             <div className="perspectives">{perspectives}</div>
             <img src={getUrl(this.state.selected)} alt="Audi Q3 Sportback" />
