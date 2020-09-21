@@ -1,0 +1,13 @@
+.colorWrapper {
+    text-align:center;
+    min-width: 64px;
+    margin-right: 4px;
+    font-size: 0.57rem;
+    box-sizing: content-box;
+    border-radius: 5px;
+    border: 2px solid #fff;
+    cursor: default;
+}
+.colorWrapper.selected {
+    border: 2px solid #0773da6e;
+}
