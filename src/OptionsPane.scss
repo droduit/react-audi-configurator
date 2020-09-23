@@ -1,0 +1,38 @@
+.optionGroupContent {
+    display:flex;
+    flex-wrap: wrap;
+    column-gap: 0.3em;
+    row-gap: 0.3em;
+
+    &.roues {
+        padding-top: 2px!important;
+        padding-bottom: 4px!important
+    }
+    &.columns {
+        flex-flow: column!important;
+        width: 100%;
+        padding-right: 14px;
+    }
+    &.alignCenter {
+        align-items: center;
+    }
+    &.alignLeft {
+        align-items: start!important;
+    }
+    > .category {
+        border-bottom: 1px solid #000;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #000;
+        color: white;
+        border-radius: 5px;
+        font-size: 0.6rem;
+    }
+}
+.OptionGroupTitle {
+    font-size: 0.85rem;
+    border-top: 1px solid #fff;
+}
+

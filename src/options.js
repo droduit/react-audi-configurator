@@ -1,8 +1,12 @@
 const staticMediaUrl =  "https://mediaservice.audi.com/media/cdb/data/";
 
 const options = {
+    modelsAudi: {
+        "q3": {name:"Q3", code:"f3bary", img:"https://mediaservice.audi.com/media/live/50900/fly1400x601n8/f3b/2019.png?wid=220"},
+        "q3-sportback": {name:"Q3 sportback", code:"f3nary", img:"https://mediaservice.audi.com/media/live/50900/fly1400x601n8/f3n/2020.png?wid=220"}
+    },
 
-    models: {
+    modelLines: {
       "attraction": {name:"Attraction", code:"stf2jb"},
       "sline": {name:"S-line", code:"stf2jk"}
     },
@@ -39,7 +43,7 @@ const options = {
     },
   
     toit : {
-      "avec": {code:"dei3fb", name:"Coulissant panoramique"},
+      "avec": {code:"dei3fb", name:"Coulissant panoramique", img: staticMediaUrl + "16db8036-6345-480b-939c-a325e9328f21.jpg"},
       "sans": {code:"dei3fa", name:"Normal"}
     },
   
@@ -49,7 +53,7 @@ const options = {
     },
   
     vitres : {
-      "tainted": {code:"sctql5", name:"Teintées"},
+      "tainted": {code:"sctql5", name:"Teintées", img: staticMediaUrl + "c21fdf8f-0df4-4130-9e97-83ed49467d7a.jpg"},
       "normal" : {code:"sctql1", name:"Non-teintées"}
     },
     

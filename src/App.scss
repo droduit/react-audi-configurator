@@ -1,0 +1,65 @@
+$maxwidth: 992px;
+
+.showroom {
+  height: calc(100vh - 47px);
+  align-items: center;
+  justify-content: center;
+  background: #f2f2f2;
+  overflow: hidden;
+
+  @media screen and (max-width: $maxwidth) {
+    height: calc(55vh - 4px);
+  }
+
+  img {
+    width: 100%;
+    max-width : 1400px;
+  }
+}
+
+.perspectives {
+  display: flex;
+  position: absolute;
+  top: 0;
+  align-items: center;
+  justify-content: center;
+  
+  img {
+    width: 75px;
+    &.selected {
+      border: 2px solid #0773da6e;
+    }
+  }
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  padding: 0;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+  @media screen and (max-width: $maxwidth) {
+    border-bottom: 5px solid #343a40;
+    position: relative;
+    z-index: 1;
+  }
+}
+.sidebar-sticky {
+  position: sticky;
+  top: 46px;
+  height: calc(100vh - 46px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: white;
+  @media screen and (max-width: $maxwidth) {
+    height: calc(45vh - 48px);
+  }
+}
+
+@media screen and (max-width: $maxwidth) {
+  .modelName.lead {
+    font-size: 1.1rem;
+  }
+}

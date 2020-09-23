@@ -7,7 +7,8 @@
     border-radius: 5px;
     border: 2px solid #fff;
     cursor: default;
-}
-.optionWrapper.selected {
-    border: 2px solid #0773da6e;
+
+    &.selected {
+        border: 2px solid #0773da6e;
+    }
 }

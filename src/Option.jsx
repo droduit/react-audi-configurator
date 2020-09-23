@@ -1,27 +1,38 @@
 import React from 'react';
-import './Option.css';
+import './Option.scss';
 
 function Option(props) {
-    let classNames = ["optionWrapper"];
-    if (props.selected) {
-        classNames.push("selected");
-    }
+    let wrapperClassNames = "optionWrapper";
+    
 
+    let textClassNames = "";
     let illustration = [];
     if (props.data.img) {
-        illustration.push(<img
+        let imgWidth = "64px";
+        if (props.data.imgWidth) {
+            imgWidth = props.data.imgWidth;
+        }
+
+        illustration.push(
+        <img
             key={Math.round(Math.random() * 10)}
             className="option"
             alt={props.data.name}
-            width="64px"
+            width={imgWidth}
             src={props.data.img}
         />);
+        if (props.selected) {
+            wrapperClassNames += " selected";
+        }
+    } else {
+        textClassNames += "btn btn-sm";
+        textClassNames += props.selected ? " btn-dark active" : " btn-secondary";
     }
 
     return (
-        <div className={classNames.join(" ")} onMouseOver={props.onClick}>
+        <div className={wrapperClassNames} onMouseOver={props.onClick}>
             {illustration}
-            <div>{props.data.name}</div>
+            <div className={textClassNames}>{props.data.name}</div>
         </div>
     );
 }
