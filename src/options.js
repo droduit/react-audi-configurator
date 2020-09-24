@@ -58,12 +58,12 @@ const options = {
     },
     
     perspectives : {
+      "front": "n4c03",
       "side-front": "n4c01",
-      "side-back": "n4c12",
       "side": "n4c14",
+      "side-back": "n4c12",
       "back": "n4c11",
       "close": "n4c02",
-      "front": "n4c03"
     },
   
     colors : {
