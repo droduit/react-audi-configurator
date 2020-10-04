@@ -4,6 +4,10 @@ import './Option.scss';
 function Option(props) {
     let wrapperClassNames = "optionWrapper";
     
+    let wrapperStyle = {};
+    if (props.data.containerWidth) {
+        wrapperStyle = {width: props.data.containerWidth};
+    }
 
     let textClassNames = "";
     let illustration = [];
@@ -18,7 +22,7 @@ function Option(props) {
             key={Math.round(Math.random() * 10)}
             className="option"
             alt={props.data.name}
-            width={imgWidth}
+            style={{width:imgWidth}}
             src={props.data.img}
         />);
         if (props.selected) {
@@ -30,7 +34,7 @@ function Option(props) {
     }
 
     return (
-        <div className={wrapperClassNames} onMouseOver={props.onClick}>
+        <div className={wrapperClassNames} onMouseOver={props.onClick} style={wrapperStyle}>
             {illustration}
             <div className={textClassNames}>{props.data.name}</div>
         </div>

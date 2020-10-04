@@ -119,6 +119,48 @@ const options = {
         {code:"f73",img: staticMediaUrl + "88571949-dcbb-4143-a33e-4927f35b252e.png"},
         {code:"52Z",img: staticMediaUrl + "5fb0c69e-fdd8-4705-981d-103b45831315.png"}
       ]
+    },
+
+    interior:{
+      perspectives: {
+        0: "n4n06",
+        1: "n4n05",
+        2: "n4n10"
+      },
+      sieges: {
+        "alcantara-mono-pur550": {
+          "noir-noir": {code1: "56+fz", code2: "sibn7u", code3: "lum7hc", code4: "vosq4h"}
+        },
+        "alcantara-design-selection": {
+          "argent-lunaire-gris": {code1: "56+gp", code2: "sibn3n", code3: "lum7he", code4: "vosq4h"},
+          "gris-pandora": {code1: "56+gf", code2: "sibn3n", code3: "lum7he", code4: "vosq4h"}
+        },
+        "cuir-mono-pur550": {
+          "beige-nacre": {code1: "56+gc", code2: "sibn1m", code3: "lum7hc", code4: "vosq1a"},
+          "brun-okapi": {code1: "56+ml", code2: "sibn1m", code3: "lum7hc", code4: "vosq1a"},
+          "noir-noir": {code1: "56+fz", code2: "sibn1m", code3: "lum7hc", code4: "vosq1a"}
+        },
+        "cuir-mono-pur550-design-selection": {
+          "brun-ambre-noir": {code1: "56+ge", code2: "sibn1d", code3: "lum7hd", code4: "vosq4h"},
+          "gris-noir": {code1: "56+gh", code2: "sibn1d", code3: "lum7he", code4: "vosq4h"}
+        },
+        "cuir-mono-pur550-sline": {
+          "gris-anthracite": {code1: "56+oq", code2: "sibn1p", code3: "lum7hc", code4: "vosq4h"},
+          "noir-noir-gris": {code1: "56+ei", code2: "sibn1p", code3: "lum7hc", code4: "vosq4h"},
+          "noir-noir-rouge": {code1: "56+uk", code2: "sibn1p", code3: "lum7hc", code4: "vosq4h", code5: "yybyyb"}
+        },
+        "tissu-similicuir-s-line": {
+          "noir-noir-gris": {code1: "56+ei", code2: "sibn7v", code3: "lum7hc", code4: "vosq4h"},
+          "rouge-soul-gris": {code1: "56+gk", code2: "sibn7v", code3: "lum7hc", code4: "vosq4h"}
+        },
+        "tissu-similicuir-design-selection": {
+          "gris" :  {code1: "56+gf", code2: "sibn0s", code3: "lum7he", code4: "vosq4h"}
+        },
+        "frequenz-similicuir-s-line": {
+          "noir-noir-gris" :  {code1: "56+ei", code2: "sibn7k", code3: "lum7he", code4: "vosq4h"},
+          "noir-noir-rouge" :  {code1: "56+uk", code2: "sibn7k", code3: "lum7hc", code4: "vosq4h", code5: "yybyyb"},
+        }
+      }
     }
   };
 
