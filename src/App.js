@@ -6,7 +6,7 @@ import options from './options';
 const modelName = "Audi Q3 Sportback 2021";
       
 function getImageUrl(opts) {
-  const url = "http://mediaservice.audi.com/media/live/50450/$perspective$/$enginePower$-0/2021/14+$color$/aaue0a/aed1ts/aer0p0/ahv1d0/ase6xk/asl5sl/asr5ru/asy0k4/$engineTraction$/ausa9b/bah2em/bav1zk/$retroviseurs$/$toit$/dfh1jc/edf0ij/eil7m0/eph7x2/fls8k4/$engineFuel$/hes5j1/him6nj/hsw8it/kark4h/kasqk1/kds4h5/krs1a5/ksuka0/kzt31b/leal0l/$phares$/lra1xw/lrvav1/mdsfm0/motd8i/nav7ug/onlel5/pamgp0/rad$roues$/rcoer1/reihh1/sbr8vm/$vitres$/sdh4e7/spu79d/$modelLine$/$laveProjecteur$/tkv4i2/twu1sa/tyz2z8/vtv9ze/wss4gf/zbr2wa/$packStyle$/zuh9m0/$lc_pr_aeexc$codeImg$.jpeg";
+  const url = "http://mediaservice.audi.com/media/live/50450/$perspective$/$enginePower$-0/2021/14+$color$/aaue0a/aed1ts/aer0p0/ahv1d0/ase6xk/asl5sl/asr5ru/asy0k4/$engineTraction$/ausa9b/bah2em/bav1zk/$retroviseurs$/$toit$/dfh1jc/edf0ij/eil7m0/eph7x2/fls8k4/$engineFuel$/hes5j1/him6nq/hsw8it/kark4h/kasqk1/kds4h5/krs1a5/ksuka0/kzt31b/leal0l/$phares$/lra1xw/lrvav1/mdsfm0/motd8i/nav7ug/onlel5/pamgp0/rad$roues$/rcoer1/reihh1/sbr8vm/$vitres$/sdh4e7/spu79d/$modelLine$/$laveProjecteur$/tkv4i2/twu1sa/tyz2z8/vtv9ze/wss4gf/zbr2wa/$packStyle$/zuh9m0/$lc_pr_aeexc$codeImg$.jpeg";
 
   var urlPhoto = url;
   if (opts['modelLine'] === "stf2jk") {
@@ -36,15 +36,38 @@ function getImageUrl(opts) {
 }
 
 function getImageUrlInterior(opts) {
-  const url = "https://mediaservice.audi.com/media/live/50450/$perspective$/f3nary-0/2021/14+n8n8/$code1$/aaue0a/aed1ts/afhug1/aib4uf/algqe0/ase6xk/asl5sl/asr5ru/asy0k0/ata1x1/ausa9b/bbo6fa/blbb0a/cha2h6/chrqj0/dei3fa/dekgt6/dfo6f4/edf0ij/eih5ma/eph7x2/esi7w1/essui2/feu6a0/fhwvf0/fsbuh1/gmot3y/gra8t8/gspg1d/him6nj/his5kr/hka9ak/insu5a/irs4l6/kark5a/kasqk1/kds4h5/krs0f5/ksa5c0/ksi3g4/lcpqq0/leal0l/ler3h0/lia8g1/lor7p0/lra1xw/lse9vd/$code3$/mas6e3/mdsfm0/mfa9s1/moaix2/nav7ug/nnnfz1/onlel5/pamgp0/raoi8t/rau9ja/rcoer1/rufnz4/sab4x3/sctql1/sdh4e7/sgk1i0/$code2$/sie3l3/sih4a3/siz0lf/sna7l6/spu79d/stf2jb/tkv4i2/vbk1t3/$code4$/vtv9ze/wss4gf/$code5$zfm0td/zkv3b4/zuh9m0.jpeg";
+  const url = "https://mediaservice.audi.com/media/live/50450/$perspective$/f3nary-0/2021/14+$color$/$code1$/aaue0a/aed1ts/afhug1/aib4uf/algqe0/ase6xk/asl5sl/asr5ru/asy0k0/ata1x1/ausa9b/$retroviseurs$/blbb0a/cha2h6/chrqj0/$toit$/dekgt6/dfo6f4/edf0ij/$decoration$/eph7x2/esi7w1/essui2/feu6a0/fhwvf0/fsbuh1/gmot3y/gra8t8/gspg1d/$ciel$/$siegeArriere$/hka9ak/insu5a/irs4l6/kark5a/kasqk1/kds4h5/krs0f5/ksa5c0/ksi3g4/$eclairage$/leal0l/ler3h0/lia8g1/lor7p0/$volant$/lse9vd/$code3$/mas6e3/mdsfm0/mfa9s1/moaix2/nav7ug/nnnfz1/onlel5/pamgp0/raoi8t/rau9ja/rcoer1/rufnz4/sab4x3/$vitres$/sdh4e7/sgk1i0/$code2$/sie3l3/sih4a3/siz0lf/sna7l6/spu79d/stf2jb/tkv4i2/vbk1t3/$code4$/vtv9ze/wss4gf/$code5$zfm0td/zkv3b4/zuh9m0/$lc_pr_aeexc$codeImg$.jpeg";
 
   let urlPhoto = url;
-  urlPhoto = urlPhoto.replace('$perspective$', opts['perspective']);
-  urlPhoto = urlPhoto.replace('$code1$', opts['sieges']['code1']);
-  urlPhoto = urlPhoto.replace('$code2$', opts['sieges']['code2']);
-  urlPhoto = urlPhoto.replace('$code3$', opts['sieges']['code3']);
-  urlPhoto = urlPhoto.replace('$code4$', opts['sieges']['code4']);
-  let code5 = opts['sieges']['code5'] ?? '';
+
+  urlPhoto = urlPhoto.replace('$retroviseurs$', opts['retroviseurs']);
+  urlPhoto = urlPhoto.replace('$color$', opts['color']['code']);
+  urlPhoto = urlPhoto.replace("$codeImg$", opts['color'].codeImg);
+  urlPhoto = urlPhoto.replace('$vitres$', opts['vitres']);
+  urlPhoto = urlPhoto.replace("$toit$", opts['toit']);
+
+  // Intérieur
+  urlPhoto = urlPhoto.replace('$perspective$', opts['interior']['perspective']);
+  urlPhoto = urlPhoto.replace('$volant$', opts['interior']['volant'].code);
+  urlPhoto = urlPhoto.replace('$siegeArriere$', opts['interior']['siegeArriere'].code);
+  urlPhoto = urlPhoto.replace('$eclairage$', opts['interior']['eclairage'].code);
+  urlPhoto = urlPhoto.replace('$ciel$', opts['interior']['ciel'].code);
+  urlPhoto = urlPhoto.replace('$decoration$', opts['interior']['decoration'].code);
+  
+  urlPhoto = urlPhoto.replace('$code1$', opts['interior']['sieges']['code1']);
+  urlPhoto = urlPhoto.replace('$code2$', opts['interior']['sieges']['code2']);
+  
+  console.log("element", opts['interior']['element']);
+
+  if (opts['interior']['element'] !== null && opts['interior']['element'].code !== null) {
+    urlPhoto = urlPhoto.replace('$code3$', opts['interior']['element'].code);
+  } else {
+    urlPhoto = urlPhoto.replace('$code3$', opts['interior']['sieges']['code3']);
+  }
+
+  urlPhoto = urlPhoto.replace('$code4$', opts['interior']['sieges']['code4']);
+
+  let code5 = opts['interior']['sieges']['code5'] ?? '';
   if (code5.length > 0) { code5 += "/"; }
   urlPhoto = urlPhoto.replace('$code5$', code5);
 
@@ -89,7 +112,13 @@ class App extends React.Component {
         laveProjecteur: options['laveProjecteur']['sans'].code,
         interior: {
           perspective: options['interior']['perspectives'][0],
-          sieges: options['interior']['sieges']['cuir-mono-pur550']['beige-nacre']
+          sieges: options['interior']['sieges']['cuir-mono-pur550']['beige-nacre'],
+          volant: options['interior']['volants']['multi-plus'],
+          siegeArriere: options['interior']['siegeArrieres']['banquette-normale'],
+          eclairage: options['interior']['eclairages']['aucun'],
+          ciel: options['interior']['ciel']['argent'],
+          decoration: options['interior']['decorations']['micromet'],
+          element: null
         }
       },
       wheelsSize : 64,
@@ -177,8 +206,12 @@ class App extends React.Component {
     for (let o in persOpts.options) {
       let perspCode = persOpts.options[o];
 
-      let opts = Object.assign({}, persOpts.selection);
-      opts.perspective = perspCode;
+      let opts = JSON.parse(JSON.stringify(this.state.selected));
+      if (this.state.displayedFrame === "interior") {
+        opts.interior.perspective = perspCode;
+      } else {
+        opts.perspective = perspCode;
+      }
 
       let classNames = "";
       if (persOpts.selection.perspective === perspCode) {
@@ -281,12 +314,12 @@ class App extends React.Component {
               data={{...options, wheels: wheels}}
               onClick={(type, code) => persOpts.onEvent(type, code)}
               getImgUrl={(opts) => persOpts.image(opts)}
-              selection={persOpts.selection}
+              selection={this.state.selected}
               displayedFrame={this.state.displayedFrame} />
           </nav>
           <div className="col-md-12 ml-sm-auto col-lg-8 d-flex p-0 showroom">
             <div className="perspectives">{perspectives}</div>
-            <img src={persOpts.image(persOpts.selection)} alt={modelName} />
+            <img src={persOpts.image(this.state.selected)} alt={modelName} />
             
             <div className={"btn-save" + (Object.keys(this.state.confHistory).length > 0 ? " btn-group" : "") + (this.state.displayedFrame === "interior" ? " d-none" : "")}>
               <button type="button" className={"btn btn-secondary"+(Object.keys(this.state.confHistory).length > 0 ? "" : " d-none")} onClick={() => this.handleClickConfigsBtn()}>Configurations</button>

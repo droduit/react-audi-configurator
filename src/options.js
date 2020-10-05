@@ -160,7 +160,44 @@ const options = {
           "noir-noir-gris" :  {code1: "56+ei", code2: "sibn7k", code3: "lum7he", code4: "vosq4h"},
           "noir-noir-rouge" :  {code1: "56+uk", code2: "sibn7k", code3: "lum7hc", code4: "vosq4h", code5: "yybyyb"},
         }
-      }
+      },
+      siegeArrieres: {
+        "banquette-normale" : {name: "Normale", code:"his5kn"},
+        "banquette-porte-gobelet" : {name: "Porte-gobelets", code: "his5kr"}
+      },
+      volants: {
+        "multi-plus": {name:"De série",code:"lra1xw", img: staticMediaUrl + "8849f731-f041-4fa0-a2ce-4c3922382f59.png"},
+        "multi-plus-chauffage": {name:"Avec chauffage", code:"lra2zw", img: staticMediaUrl + "4002630c-c782-496f-809e-c326f55d5668.png"},
+        "multi-plus-palette": {name:"Avec palettes", code:"lra1xx", img: staticMediaUrl + "3b65ff3e-722e-490f-beee-e9f6c1561dc5.png"},
+        "multi-plus-applati": {name:"Aplati", code:"lra2pf", img: staticMediaUrl + "de59e326-9400-429e-8fa8-5a10599a33c1.png"},
+        "multi-plus-palette-applati": {name:"Aplati + palettes", code:"lra2pk", img: staticMediaUrl + "8b57b02e-7686-49d9-9af1-a6327fa99cff.png"},
+      },
+      eclairages: {
+        "aucun": {name: "Eclairage intérieur", code:"lcpqq0"},
+        "ambiance" : {name: "Pack Ambiance", code: "lcpqq1"},
+        "ambiance-plus": {name: "Pack Ambiance Plus", code: "lcpqq2"}
+      },
+      ciel : {
+        "argent": {code:"him6nj", name:"Argent lunaire"},
+        "noir" : {code:"him6nq", name:"Noir"}
+      },
+      decorations: {
+        "alu-dark": {name:"Alu Dimension Foncé", code:"eih5te"},
+        "alu-mat": {name:"Alu Mat Brossé Foncé", code:"eih5tg"},
+        "tilleul": {name:"Tilleul Artefact Brun Gris Naturel", code:"eih5tf"},
+        "micromet": {name:"Micrométallique Argent", code:"eih5ma"},
+        "alu-silver": {name:"Alu Dimension Argent", code:"eih5td"},
+        "carbon": {name:"Carbone Sergé", code:"eih5mb"},
+        "piano": {name:"Piano laqué Noir Audi exclusive", code:"eih5tl"},
+      },
+      elements: {
+        "de-base": {name:"De base", code:null},
+        "bras-porte-cuir": {name:"Revêtement de bras de porte similicuir", code:"lum7hc"},
+        "alc-argent": {name:"Alcantara Argent Lunaire", code:"lum7hf"},
+        "alc-brun": {name:"Alcantara Brun Ambre", code:"lum7hd"},
+        "alc-gris": {name:"Alcantara Gris Acier", code:"lum7he"},
+        "alc-orange": {name:"Alcantara Orange", code:"lum7hb"},
+      },
     }
   };
 

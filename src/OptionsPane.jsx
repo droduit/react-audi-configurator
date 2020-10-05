@@ -20,22 +20,87 @@ function OptionsPane(props) {
       let seatForCategory = [];
       for (let seat in props.data.interior.sieges[seatCategory]) {
         let codesObj = props.data.interior.sieges[seatCategory][seat];
-        let selected = JSON.stringify(codesObj) === JSON.stringify(props.selection.sieges);
-        let optsForImg = {
-          perspective: props.data.interior.perspectives[0],
-          sieges: codesObj
-        };
+        let selected = JSON.stringify(codesObj) === JSON.stringify(props.selection.interior.sieges);
+        let optsForImg = JSON.parse(JSON.stringify(props.selection));
+        optsForImg.interior['perspective'] = props.data.interior.perspectives[0];
+        optsForImg.interior['sieges'] = codesObj;
+        optsForImg.interior['volant'] = props.data.interior.volants["multi-plus"];
+        optsForImg.interior['siegeArriere'] = props.data['interior']['siegeArrieres']['banquette-normale'];
+        optsForImg.interior['eclairage'] = props.data['interior']['eclairages']['aucun'];
+        optsForImg.interior['ciel'] = props.data['interior']['ciel']['argent'];
+        optsForImg.interior['decoration'] = props.data['interior']['decorations']['micromet'];
+        optsForImg.interior['element'] = null;
+        
         let dataObj = {img: props.getImgUrl(optsForImg), containerWidth: "30%", imgWidth: "100%"};
         sieges.push(<Option key={seatCategory+seat} data={dataObj} onClick={() => props.onClick("sieges", codesObj)} selected={selected} />); 
       }
 
       //sieges.push(<div key={"seat-content-"+seatCategory} className={optionGroupContent+" seats alignLeft"}>{seatForCategory}</div>);
     }
-    
-  
-    //options.push(<div key="modele-title" className={titleClassNames}>Modèle</div>);
-    options.push(<div key="modele-content" className={optionGroupContent+" type"}>{sieges}</div>);
+    options.push(<div key="seats-title" className={titleClassNames}>Sièges</div>);
+    options.push(<div key="seats-content" className={optionGroupContent+" type"}>{sieges}</div>);
 
+
+    let volants = [];
+    for (let v in props.data.interior.volants) {
+      let obj = props.data.interior.volants[v];
+      let selected = JSON.stringify(obj) === JSON.stringify(props.selection.interior.volant);
+      volants.push(<Option key={v} data={{...obj, imgWidth: "100px"}} onClick={() => props.onClick("volant", obj)} selected={selected} />); 
+    }
+    options.push(<div key="volant-title" className={titleClassNames}>Volant</div>);
+    options.push(<div key="volant-content" className={optionGroupContent+" type"}>{volants}</div>);
+    
+
+    let siegesArriere = [];
+    for (let v in props.data.interior.siegeArrieres) {
+      let obj = props.data.interior.siegeArrieres[v];
+      let selected = JSON.stringify(obj) === JSON.stringify(props.selection.interior.siegeArriere);
+      siegesArriere.push(<Option key={v} data={obj} onClick={() => props.onClick("siegeArriere", obj)} selected={selected} />); 
+    }
+    options.push(<div key="back-seat-title" className={titleClassNames}>Siège arrière</div>);
+    options.push(<div key="back-seat-content" className={optionGroupContent+" type"}>{siegesArriere}</div>);
+
+
+    let eclairages = [];
+    for (let v in props.data.interior.eclairages) {
+      let obj = props.data.interior.eclairages[v];
+      let selected = JSON.stringify(obj) === JSON.stringify(props.selection.interior.eclairage);
+      eclairages.push(<Option key={v} data={obj} onClick={() => props.onClick("eclairage", obj)} selected={selected} />); 
+    }
+    options.push(<div key="eclairage-title" className={titleClassNames}>Eclairage</div>);
+    options.push(<div key="eclairage-content" className={optionGroupContent+" type"}>{eclairages}</div>);
+
+    let ciels = [];
+    for (let v in props.data.interior.ciel) {
+      let obj = props.data.interior.ciel[v];
+      let selected = JSON.stringify(obj) === JSON.stringify(props.selection.interior.ciel);
+      ciels.push(<Option key={v} data={obj} onClick={() => props.onClick("ciel", obj)} selected={selected} />); 
+    }
+    options.push(<div key="ciel-title" className={titleClassNames}>Ciel de pavillon</div>);
+    options.push(<div key="ciel-content" className={optionGroupContent+" type"}>{ciels}</div>);
+
+
+    let decorations = [];
+    for (let v in props.data.interior.decorations) {
+      let obj = props.data.interior.decorations[v];
+      let selected = JSON.stringify(obj) === JSON.stringify(props.selection.interior.decoration);
+      decorations.push(<Option key={v} data={obj} onClick={() => props.onClick("decoration", obj)} selected={selected} />); 
+    }
+    options.push(<div key="decoration-title" className={titleClassNames}>Insert décoratifs</div>);
+    options.push(<div key="decoration-content" className={optionGroupContent+" type"}>{decorations}</div>);
+
+
+    let elements = [];
+    for (let v in props.data.interior.elements) {
+      let obj = props.data.interior.elements[v];
+      let selected = JSON.stringify(obj) === JSON.stringify(props.selection.interior.element);
+      elements.push(<Option key={v} data={obj} onClick={() => props.onClick("element", obj)} selected={selected} />); 
+    }
+    options.push(<div key="element-title" className={titleClassNames}>Éléments d'équipement intérieur</div>);
+    options.push(<div key="element-content" className={optionGroupContent+" type"}>{elements}</div>);
+
+
+    
   } else {
     let roues = [];
     for (let inches in props.data.roues) {
